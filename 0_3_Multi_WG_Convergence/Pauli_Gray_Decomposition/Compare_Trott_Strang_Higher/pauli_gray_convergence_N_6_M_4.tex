@@ -1,0 +1,126 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\documentclass[tikz]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{grffile}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+\usepackage{amsmath}
+
+\begin{document}
+\definecolor{mycolor1}{rgb}{1.00000,0.00000,1.00000}%
+\definecolor{mycolor2}{rgb}{0.00000,1.00000,1.00000}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=1,
+xmax=9,
+xlabel style={font=\color{white!15!black}},
+xlabel={\# Trotter steps},
+ymin=0,
+ymax=14,
+ylabel style={font=\color{white!15!black}},
+ylabel={Order of Convergence},
+axis background/.style={fill=white},
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=red, dashdotted]
+  table[row sep=crcr]{%
+1	1.07691398374524\\
+2	1.77443119148163\\
+3	1.83245361355546\\
+4	1.88861907779861\\
+5	1.92223412273539\\
+6	1.94302649748685\\
+7	1.95660131531416\\
+8	1.96589850490736\\
+9	1.97252431187604\\
+};
+\addlegendentry{\hat{T}}
+
+\addplot [color=red]
+  table[row sep=crcr]{%
+1	3.03735434034853\\
+2	4.55068535491863\\
+3	4.12734793483299\\
+4	4.05837977598212\\
+5	4.03417679783469\\
+6	4.0226706816921\\
+7	4.01623354769185\\
+8	4.0122414898035\\
+9	4.00958302896763\\
+};
+\addlegendentry{\hat{S}_1}
+
+\addplot [color=black, dashed]
+  table[row sep=crcr]{%
+1	3.60292876485357\\
+2	7.45686505911602\\
+3	6.17817762387586\\
+4	6.45285901231127\\
+5	6.80410274523369\\
+6	7.07882284072728\\
+7	7.27844380261272\\
+8	7.42327402661327\\
+9	7.53011815399832\\
+};
+\addlegendentry{\hat{S}_3^{(3)}}
+
+\addplot [color=blue, dashed]
+  table[row sep=crcr]{%
+1	5.78730763148417\\
+2	12.5892917310095\\
+3	8.85995352830675\\
+4	8.26889778157832\\
+5	8.1120165131515\\
+6	8.05468498136392\\
+7	8.02967895114383\\
+8	8.01747273541934\\
+9	8.01048170065337\\
+};
+\addlegendentry{\hat{S}_3^{(5)}}
+
+\addplot [color=mycolor1, dashed]
+  table[row sep=crcr]{%
+1	5.82141250808511\\
+2	12.7483005838875\\
+3	9.22070880242971\\
+4	8.58643578090864\\
+5	8.35669036160104\\
+6	8.2423201361903\\
+7	8.17649605405905\\
+8	8.13603679133576\\
+9	8.10352282342448\\
+};
+\addlegendentry{\hat{S}_3^{(7)}}
+
+\addplot [color=mycolor2, dashed]
+  table[row sep=crcr]{%
+1	6.60245208822614\\
+2	12.5066573373165\\
+3	9.12074383841274\\
+4	8.5673109892027\\
+5	8.35252774418916\\
+6	8.24131298153953\\
+7	8.18204050823399\\
+8	8.08411251025836\\
+9	8.22478890702361\\
+};
+\addlegendentry{\hat{S}_3^{(9)}}
+
+\end{axis}
+\end{tikzpicture}%
+\end{document}

@@ -1,0 +1,21 @@
+%\documentclass[border={25pt 10pt 25pt 10pt}]{standalone} 
+%\usepackage{braket}
+%\usepackage{qcircuit} 
+%\usepackage{amsmath} 
+%\usepackage{fixltx2e,graphicx,mathpazo}
+%\usepackage{tikz}
+
+%\begin{document}
+\begin{tikzpicture}
+\node [text width=8cm] at (0,0) {\[\Qcircuit @C=.7em @R=.4em @!R {
+\lstick{\ket{0}} & \qw & \qw &  &  & \qw & \qw & \targ & \ctrl{7} & \targ & \qw & \qw & \qw \\ 
+ \lstick{\ket{0}} & \qw & \qw &  &  & \qw & \targ & \ctrl{-1} & \qw & \ctrl{-1} & \targ & \qw & \qw \\ 
+ \lstick{\ket{0}} & \qw & \qw &  &  & \targ & \ctrl{-1} & \qw & \qw & \qw & \ctrl{-1} & \targ & \qw \\ 
+ \lstick{\ket{\phi}_{5}} & \ctrlo{1} & \rstick{\raisebox{-2.5em}{=}} \qw &  &  & \qw & \qw & \ctrlo{-2} & \qw & \ctrlo{-2} & \qw & \qw & \qw \\ 
+ \lstick{\ket{\phi}_{4}} & \ctrl{1} & \qw &  &  & \qw & \ctrl{-2} & \qw & \qw & \qw & \ctrl{-2} & \qw & \qw \\ 
+ \lstick{\ket{\phi}_{3}} & \ctrl{1} & \qw &  &  & \ctrl{-3} & \qw & \qw & \qw & \qw & \qw & \ctrl{-3} & \qw \\ 
+ \lstick{\ket{\phi}_{2}} & \ctrl{1} & \qw &  &  & \ctrl{-1} & \qw & \qw & \qw & \qw & \qw & \ctrl{-1} & \qw \\ 
+ \lstick{\ket{\phi}_{1}} & \gate{U} & \qw &  &  & \qw & \qw & \qw & \gate{\scalebox{0.8}[0.8]{\(U\)}} & \qw & \qw & \qw & \qw  
+}\]};
+\end{tikzpicture}
+%\end{document}

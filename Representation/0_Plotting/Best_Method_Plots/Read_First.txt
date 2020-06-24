@@ -1,0 +1,7 @@
+These Programs are specifically designed to compare different methods and find the ideal solution for a certain type of problem.
+ 
+ - Fastest_Fidelity: How fast can you achieve a desired fidelity with certain parameters. Finds the algorithm with the lowest cost. (costs are given for single and double qubit gates). 
+ 
+	- Extrapolate from the data via Regression models in case such a fidelity cannot be achieved with the given input data.
+	- Extrapolate convergence order -> extrapolate error rate -> extrapolate fidelity rates
+ 	- Extrapolate gate numbers

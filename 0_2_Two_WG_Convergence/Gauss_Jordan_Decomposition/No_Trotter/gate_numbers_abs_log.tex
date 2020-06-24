@@ -1,0 +1,52 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+area style,
+stack plots=y,
+xmin=1,
+xmax=7,
+xlabel style={font=\color{white!15!black}},
+xlabel={\# of photons in modes},
+ymode=log,
+ymin=10,
+ymax=100000,
+yminorticks=true,
+axis background/.style={fill=white},
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot[fill=red, draw=black] table[row sep=crcr]{%
+1	33\\
+2	788\\
+3	1839\\
+4	6361\\
+5	10849\\
+6	15795\\
+7	24652\\
+}
+\closedcycle;
+\addlegendentry{\# two qubit gates}
+
+\addplot[fill=blue, draw=black] table[row sep=crcr]{%
+1	27\\
+2	498\\
+3	1158\\
+4	3932\\
+5	6676\\
+6	9689\\
+7	15126\\
+}
+\closedcycle;
+\addlegendentry{\# single qubit gates}
+
+\end{axis}
+\end{tikzpicture}%

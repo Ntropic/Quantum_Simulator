@@ -1,0 +1,44 @@
+\relax
+\bibstyle{biblatex}
+\bibdata{How_To_Quantum_Simulator-blx,library}
+\citation{biblatex-control}
+\abx@aux@refcontext{nyt/global//global/global}
+\@writefile{toc}{\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax }
+\@writefile{lof}{\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax }
+\@writefile{lot}{\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax }
+\babel@aux{english}{}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1}Installation \& Requirements}{1}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2}Folder Structure}{1}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3}Basic Procedure}{1}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4}Defining Gates}{1}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Folder Structure.\relax }}{2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:overview}{{1}{2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5}Calculating the Unitary Matrix}{3}\protected@file@percent }
+\newlabel{sec:calc_unit}{{5}{3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {6}Representing Results}{4}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  Circuit representation of the gate $C^4_{1110}\mathaccentV {hat}65E{U}$. \relax }}{4}\protected@file@percent }
+\newlabel{fig:circ_c4u}{{2}{4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Quantum Circuit Representation}{4}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Matlab2Tikz}{4}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Matrices}{4}\protected@file@percent }
+\citation{Geller2013}
+\abx@aux@cite{Geller2013}
+\abx@aux@segm{0}{0}{Geller2013}
+\citation{Ghosh2013}
+\abx@aux@cite{Ghosh2013}
+\abx@aux@segm{0}{0}{Ghosh2013}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  Matrix representation of the gate $C\mathaccentV {hat}65E{U}(2)$. \relax }}{5}\protected@file@percent }
+\newlabel{fig:mat_cu}{{3}{5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Plotting}{5}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Density matrix $\rho $ of a state that has mostly decohered. \relax }}{5}\protected@file@percent }
+\newlabel{fig:cz_markov}{{4}{5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {7}Markovian Noise}{5}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Single qubit decoherence}{5}\protected@file@percent }
+\newlabel{sec:single_qubit_noise}{{7.1}{5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Controlled Phase errors}{5}\protected@file@percent }
+\newlabel{sec:c_phase_noise}{{7.2}{5}}
+\newlabel{LastPage}{{}{6}}
+\xdef\lastpage@lastpage{6}
+\gdef\lastpage@lastpageHy{}
+

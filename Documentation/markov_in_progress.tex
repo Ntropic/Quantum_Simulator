@@ -1,0 +1,67 @@
+\section{Markovian Noise}
+The Quantum Simulator supports a Markovian noise model for the provided elementary gates. The action of a circuit, with Markovian noise, on an input density matrix $\rho$ can be calculated via the function \path{Noisy_Expansion2Matrix.m}. Every gate is associated with a noise model, that will be explained next. The noise is approximated by Twirling Kraus operators $K_i$ (of the particular noise model) around the unitary matrix $\hat{\mathcal{U}}$ of a quantum gate
+\begin{align}
+  \hat{\rho} \quad \rightarrow \quad  \sum_j \tilde{K}_j \hat{\mathcal{U}} \left(\tilde{K}_j\hat{\rho}\tilde{K}_j \right)\hat{\mathcal{U}}^{\dagger} \tilde{K}_j^{\dagger}.\nonumber
+\end{align}
+This is similar to the Trotter approximation, as the gate errors occur stroboscopically in between the operations. For multiple qubits, the Kraus operators of a single qubit can be expanded via $K_{j,n}=\hat{\mathds{1}}_{2}^{\otimes (N-n)}\otimes K_j \otimes \hat{\mathds{1}}_{2}^{\otimes (n-1)}$. It is assumed that the noise of qubits (for single qubit operations) is uncorrelated. This leads to the approach
+\begin{align}
+\hat{\rho} \quad \rightarrow \quad  \sum_{j_1} \tilde{K}_{j_1} \left(\cdots\left( \tilde{K}_{j_N} \hat{\rho} \tilde{K}_{j_N}^{\dagger}\right)\cdots\right) \tilde{K}_{j_1}^{\dagger}.\nonumber
+\end{align}
+
+\subsection{Single qubit decoherence}\label{sec:single_qubit_noise}
+Starting from the general single qubit density matrix $\hat{\rho}$, the following decoherence process \cite{Geller2013} is assumed 
+\begin{align}
+\hat{\rho}=\begin{pmatrix}
+1-\rho_{11} & \rho_{01}\\
+\rho_{01}* & \rho_{11}
+\end{pmatrix} \,\rightarrow \,\begin{pmatrix}
+1-\rho_{11}e^{-\nicefrac{t}{T_1}} & \rho_{01}e^{-\nicefrac{t}{T_2}}\\
+\rho_{01}*e^{-\nicefrac{t}{T_2}} & \rho_{11}e^{-\nicefrac{t}{T_1}}
+\end{pmatrix}.\nonumber
+\end{align}
+Which leads to the following Kraus operators 
+\begin{align}
+K_1&=\begin{pmatrix}1& 0\\0 &\sqrt{p_1}\end{pmatrix} \qquad , p_1=e^{-2\nicefrac{t}{T_2}}\\
+K_2&=\begin{pmatrix}0 &\sqrt{g}\\ 0 &0\end{pmatrix}  \qquad , g=1-e^{-\nicefrac{t}{T_1}}\\
+K_3&=\begin{pmatrix}0 &0\\ 0& \sqrt{l}\end{pmatrix}  \qquad , l=e^{-\nicefrac{t}{T_1}}-e^{-2\nicefrac{t}{T_2}}.\nonumber
+\end{align}
+It is assumed that the error is independent of the action of a single qubit interaction or not (as the single qubit Fidelities are comparable to the Fidelities of qubits evolving for the same amount of time). 
+\subsection{Controlled Phase errors}\label{sec:c_phase_noise} 
+For the controlled Pauli-Z rotation gate $CZ_\phi$ an error model was derived in \cite{Ghosh2013}, which  transforms the ideal operation
+\begin{align}
+\hat{C}_Z(\phi)=\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 &  1 & 0\\
+0 & 0 & 0 & e^{i\phi}\nonumber
+\end{pmatrix}
+\end{align}
+into the approximated interaction
+\begin{align}
+\quad U=\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & \sqrt{1-E_1} & \sqrt{E_1}e^{i\alpha} & 0\\
+0 & -\sqrt{E_1}e^{-i\alpha} &  \sqrt{1-E_1} & 0\\
+0 & 0 & 0 & e^{i(\phi+\delta)}.\nonumber
+\end{pmatrix}
+\end{align}
+This leads to the errors ($U=V\hat{C}_Z(\phi)$)
+\begin{align}
+ V=\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & \sqrt{1-E_1} & \sqrt{E_1}e^{i\alpha} & 0\\
+0 & -\sqrt{E_1}e^{-i\alpha} &  \sqrt{1-E_1} & 0\\
+0 & 0 & 0 & e^{i\delta}
+\end{pmatrix}=\sum_{i=0}^3\sum_{j=0}^3 p_{i,j} \underbrace{\hat{\sigma}^{i}\otimes \hat{\sigma}^{j}}_{=K_{i,j}},\nonumber
+\end{align}
+which are approximated via the Pauli Twirling approximation
+\begin{align}
+p_{II}&=|\nicefrac{1}{4}(1+2\sqrt{1-E_1}+e^{i\delta})|^2\nonumber\\
+p_{IZ}&=|\nicefrac{1}{4}(1-e^{i\delta})|^2\nonumber\\
+p_{ZI}&=|\nicefrac{1}{4}(1-e^{i\delta})|^2\nonumber\\
+p_{XX}&=|\nicefrac{i}{2}\sqrt{E_1}\sin(\phi)|^2\nonumber\\
+p_{YY}&=|\nicefrac{i}{2}\sqrt{E_1}\sin(\phi)|^2\nonumber\\
+p_{XY}&=|\nicefrac{i}{2}\sqrt{E_1}\cos(\phi)|^2\nonumber\\
+p_{YX}&=|\nicefrac{i}{2}\sqrt{E_1}\cos(\phi)|^2\nonumber\\
+p_{ZZ}&=|\nicefrac{1}{4}(1-2\sqrt(1-E_1)+e^{i\delta})|^2\nonumber
+\end{align}
